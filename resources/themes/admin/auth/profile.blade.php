@@ -23,16 +23,16 @@
         <!-- /.col -->
         <div class="col-md-12">
             <div class="nav-tabs-custom">
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-tabs" >
                     <li class="@if($active_tab=="profile") active @endif">
-                        <a href="#profile" data-toggle="tab">
+                        <a style="background-color: yellow;" href="#profile" data-toggle="tab">
                             @lang('corals-admin::labels.auth.profile')
                         </a>
                     </li>
                     @php \Actions::do_action('user_profile_tabs',user(),$active_tab) @endphp
 
                 </ul>
-                <div class="tab-content">
+                <div class="tab-content" style="background-color: yellow;">
                     <div class="tab-pane @if($active_tab=="profile") active @endif" id="profile">
                         {!! Form::model($user = user(), ['url' => url('profile'), 'method'=>'PUT','class'=>'ajax-form','files'=>true]) !!}
                         <div class="nav-tabs-custom">

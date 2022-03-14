@@ -767,20 +767,28 @@ if (!function_exists('get_request_filters_array')) {
     {
         $array = explode("&", $requestFilters);
 
+        $array = str_replace('#amp#', '&', $array);
         if (!(count($array) == 1 && $array[0] == "")) {
             $index = 0;
+
             foreach ($array as $key => $value) {
                 $filter = explode("=", $value);
-
                 preg_match_all('/(.*)\[(.*?)\]/', $filter[0], $matches);
-
                 if (is_array($matches[0]) && (count($matches[0]) > 0)) {
                     if ($filter[1]) {
-                        $nodeKey = empty(trim($matches[2][0], "'")) ? $index++ : trim($matches[2][0], "'");
-                        $array[$matches[1][0]][$nodeKey] = $filter[1];
+                        if (strpos($filter[1], ',') !== false) {
+                            foreach (explode(',', $filter[1]) as $f) {
+                                $array[$matches[1][0]][] = $f;
+                            }
+                        } else {
+                            $nodeKey = empty(trim($matches[2][0], "'")) ? $index++ : trim($matches[2][0], "'");
+                            $array[$matches[1][0]][$nodeKey] = $filter[1];
+                        }
                     }
                 } else {
-                    $array[$filter[0]] = $filter[1];
+                    if ($filter[1]) {
+                        $array[$filter[0]] = $filter[1];
+                    }
                 }
                 unset ($array[$key]);
             }

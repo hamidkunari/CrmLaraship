@@ -15,6 +15,8 @@ use Illuminate\Http\Request;
  * @method postStoreUpdate($request, &$additionalData)
  * @method preUpdate($request, &$additionalData)
  * @method postUpdate($request, &$additionalData)
+ * @method preDestroy($request, $model)
+ * @method postDestroy($request)
  */
 class BaseServiceClass
 {
@@ -157,6 +159,8 @@ class BaseServiceClass
      */
     public function update($request, $model, $additionalData = [])
     {
+        $this->model = $model;
+
         if (method_exists($this, 'preUpdate')) {
             $this->preUpdate($request, $additionalData);
         }
@@ -205,14 +209,20 @@ class BaseServiceClass
     }
 
     /**
-     * @param $data
-     * @param $modelClass
+     * @param $request
+     * @param $model
      */
-
-
     public function destroy($request, $model)
     {
+        if (method_exists($this, 'preDestroy')) {
+            $this->preDestroy($request, $model);
+        }
+
         $model->delete();
+
+        if (method_exists($this, 'postDestroy')) {
+            $this->postDestroy($request);
+        }
     }
 
     /**

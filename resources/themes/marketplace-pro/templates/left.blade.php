@@ -8,7 +8,7 @@
             <div class="col-md-9 flex-xs-first main-blogs col-lg-8 order-lg-1">
                 {!! $item->rendered !!}
             </div>
-            <div class="sidebar-3 sidebar-collection col-lg-3 col-md-3 col-sm-4 order-lg-2">
+            <div style="background-color: #091E08" class="sidebar-3 sidebar-collection col-lg-2 col-md-2 col-sm-2 order-lg-2">
                 @include('partials.sidebar')
             </div>
         </div>

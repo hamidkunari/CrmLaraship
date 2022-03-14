@@ -6,7 +6,7 @@
   "description": "Corals Frameworks Foundation",
   "namespace": "Corals\\Foundation",
   "provider": "FoundationServiceProvider",
-  "version": "6.2.3",
+  "version": "6.2.5",
   "load_order": "100",
   "folder": "Foundation",
   "autoload": "psr-4",

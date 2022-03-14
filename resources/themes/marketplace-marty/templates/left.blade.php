@@ -2,7 +2,7 @@
 
 @section('editable_content')
     @include('partials.page_header')
-
+   
     <div class="container padding-bottom-3x mb-1">
         <div class="row">
             <div class="col-lg-8 order-lg-2">

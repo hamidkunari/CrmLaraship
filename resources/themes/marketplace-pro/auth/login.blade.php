@@ -1,35 +1,20 @@
 @extends('layouts.auth')
 
 @section('content')
-    <div class="wrap-banner">
-        <nav class="breadcrumb-bg">
-            <div class="container no-index">
-                <div class="breadcrumb">
-                    <ol>
-                        <li>
-                            <a href="#">
-                                <span>@lang('corals-marketplace-pro::labels.auth.login_register')</span>
-                            </a>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </nav>
 
-    </div>
     <div class="user-login ">
         <div id="wrapper-site">
-            <div id="content-wrapper" class="full-width">
+            <div id="content-wrapper" class="full-width" style="margin: 30px;padding-top: 30px; border-radius:5px; box-shadow: #091E08 0px 1px 3px, #091E08 0px 1px 2px;">
                 <div id="main">
                     <div class="container">
-                        <h1 class="text-center title-page">@lang('corals-marketplace-pro::labels.auth.login')</h1>
+                        <h1 style="margin-top: -50px;" class="text-center title-page">@lang('corals-marketplace-pro::labels.auth.login')</h1>
                         <div class="login-form">
                             <form id="customer-form" method="post" action="{{ route('login') }}">
                                 {{ csrf_field() }}
                                 <div class="p-2">
                                     @php \Actions::do_action('pre_login_form') @endphp
                                 </div>
-                                <h3 class="text-center">@lang('corals-marketplace-pro::labels.auth.sign_in_start_session')</h3>
+                                <h3 style="margin-top: -70px; font-size: 13px;" class="text-center">@lang('corals-marketplace-pro::labels.auth.sign_in_start_session')</h3>
                                 <div class="row margin-bottom-1x justify-content-center">
                                     @if(config('services.facebook.client_id'))
 
@@ -68,7 +53,7 @@
                                 <div class="form-group input-group d-block has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
                                     <div class="input-icon">
                                         <i class="lni-user"></i>
-                                        <input type="text" id="email" class="form-control" name="email"
+                                        <input style="border: solid 1px #091E08; border-radius: 5px; margin-bottom: -4px;" type="text" id="email" class="form-control" name="email"
                                                placeholder="@lang('User::attributes.user.email')"
                                                value="{{ old('email') }}" autofocus><span
                                                 class="input-group-addon"><i class="icon-mail"></i></span>
@@ -83,7 +68,7 @@
                                 <div class="form-group input-group d-block has-feedback {{ $errors->has('password') ? ' has-error' : '' }}">
                                     <div class="input-icon">
                                         <i class="lni-lock"></i>
-                                        <input type="password" name="password" class="form-control" id="password"
+                                        <input style="border: solid 1px #091E08; border-radius: 5px; margin-bottom: -4px;" type="password" name="password" class="form-control" id="password"
                                                placeholder="@lang('User::attributes.user.password')"><span
                                                 class="input-group-addon"><i class="icon-lock"></i></span>
                                     </div>
@@ -94,8 +79,8 @@
                                     @endif
                                 </div>
                                 <div class="form-group mb-3 has-feedback">
-                                    <div class="checkbox">
-                                        <input type="checkbox"
+                                    <div class="checkbox" style="color:black">
+                                        <input style="border: solid 1px #091E08; border-radius: 5px; margin-bottom: -4px;"  type="checkbox"
                                                name="remember" {{ old('remember') ? 'checked' : '' }}/>
                                         @lang('corals-marketplace-pro::labels.auth.remember_me')
                                     </div>
@@ -104,19 +89,20 @@
                                     <div class="row">
                                         <div class="col">
 
-                                            <button type="submit"
-                                                    class="btn btn-primary btn-block margin-bottom-none float-left">@lang('corals-marketplace-pro::labels.auth.login')</button>
+                                            <button style="color:white; background-color:#091E08; border-radius: 5px; margin: -7px; 0px" type="submit"
+                                                    class="btn btn btn-block margin-bottom-none float-left">@lang('corals-marketplace-pro::labels.auth.login')</button>
                                         </div>
                                     </div>
+                                    <br>
                                     <div class="row">
                                         <div class="col">
-                                            <a href="{{ route('register') }}"
-                                               class="btn btn-primary bg-blue margin-bottom-none btn-block">@lang('corals-marketplace-pro::labels.auth.register')</a>
+                                            <a style="color:white; background-color:#091E08; border-radius: 5px; margin: -7px; 0px" href="{{ route('register') }}"
+                                               class="btn btn margin-bottom-none btn-block">@lang('corals-marketplace-pro::labels.auth.register')</a>
 
                                         </div>
                                         <div class="col">
-                                            <a href="{{ route('password.request') }}"
-                                               class="btn bg-yellow btn-social btn-primary btn-block">
+                                            <a style="color:white; background-color:#091E08; border-radius: 5px; margin: -7px; 0px" href="{{ route('password.request') }}"
+                                               class="btn btn-social btn-block">
                                                 <span class="fa fa-question"></span>
                                                 @lang('corals-marketplace-pro::labels.auth.forget_password')
                                             </a>

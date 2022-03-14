@@ -110,7 +110,7 @@
                         <div class="myaccount-title">
                             @auth
                                 <a href="#acount" data-toggle="collapse" class="acount">
-                                    <img style="max-width: 22px" src="{{ user()->picture_thumb }}">
+                                    <img style="border-radius:50px; max-width: 22px" src="{{ user()->picture_thumb }}">
                                     <span style="color:white; font-size: 14px">{{ auth()->user()->name }}</span>
                                     <i style="color:white; font-size: 14px;" class="fa fa-angle-down" aria-hidden="true"></i>
                                 </a>

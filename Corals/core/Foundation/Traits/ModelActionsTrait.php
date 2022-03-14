@@ -44,7 +44,9 @@ trait ModelActionsTrait
 
                 return true;
             });
+        }
 
+        if ($view || !$isDatatable) {
             $actions = ModelActionsHandler::renderActions($actions, $view);
         }
 

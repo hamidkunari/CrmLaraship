@@ -528,7 +528,7 @@ class CoralsBuilder extends Builder
         if ($this->usesQueryBuilderFilters()) {
             $filters = $this->getQueryBuilderFilters();
             if (!empty($filters)) {
-                $script .= "var options = {filters: " . $filters . "};";
+                $script .= "$(function (){ var options = {filters: " . $filters . "};";
 
                 $script .= sprintf("$('#%s_filters').queryBuilder(options);", $tableId);
 
@@ -544,7 +544,7 @@ class CoralsBuilder extends Builder
                             if(arr.q){
                                $('#%s_filters').queryBuilder('setRules', Object.assign({}, arr.q));
                                $('#%s_filtersCollapse .filterBtn').click();
-                            }", $tableId, $tableId);
+                            }});", $tableId, $tableId);
             }
         }
 

@@ -259,16 +259,17 @@
                             </div>
                         </div>
                         <div class="ps-block--user-header">
-                            <div class="ps-block__left"><i class="icon-user"></i></div>
+
                             <div class="ps-block__right">
                                 
                             @if (Route::has('login'))
         
         @auth
-            <a href="{{ url('/dashboard') }}">Dashboard</a>
+        
+            <a href="{{ url('/dashboard') }}"><img style="border:solid 2px white; border-radius:50px; height:33px; width: 33px; object-fit: contain" src="{{ user()->picture_thumb }}"> Dashboard</a>
         @else
-            <a href="{{ route('login') }}">Login</a>
-            <a href="{{ route('register') }}">Register</a>
+       
+            <a href="{{ route('login') }}"><i style="font-size: 27px"  class="icon-user"></i></a>
         @endauth
 
 @endif

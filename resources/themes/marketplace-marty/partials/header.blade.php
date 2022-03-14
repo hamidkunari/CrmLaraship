@@ -1,4 +1,4 @@
-<div class="menu-area">
+<div class="menu-area" >
     <div class="top-menu-area">
         <div class="container">
             <div class="row">

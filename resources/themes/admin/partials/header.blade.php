@@ -1,5 +1,5 @@
 <!-- contains the header -->
-<header class="main-header">
+<header class="main-header" style="background-color: #09">
     <!-- Logo -->
     <a href="{{ url('/') }}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->

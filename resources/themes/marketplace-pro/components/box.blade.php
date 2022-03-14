@@ -1,5 +1,5 @@
 <!-- Default box -->
-<div class="card box {{ $box_class??'' }}">
+<div style="border: solid 1px #091E08" class="card box {{ $box_class??'' }}">
     <div class="box-header card-header with-border {{ empty($box_title) && empty($box_actions)?'hidden':'' }}">
         <h5 class="box-title card-title {{ !empty($box_title) || !empty($box_actions)?'':'hidden' }}">{{ $box_title ?? '' }}</h5>
 

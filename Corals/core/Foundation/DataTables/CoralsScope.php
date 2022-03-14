@@ -46,6 +46,10 @@ class CoralsScope implements DataTableScope
                 continue;
             }
 
+            if (\Arr::get($filter, 'ignore_query_scope', false)) {
+                continue;
+            }
+
             $builder = data_get($filter, 'builder');
 
             if (class_exists($builder)) {

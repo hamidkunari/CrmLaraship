@@ -1,5 +1,5 @@
 <!-- Site Footer-->
-<footer class="site-footer">
+<footer class="site-footer" style="background-color: #091E08">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6">

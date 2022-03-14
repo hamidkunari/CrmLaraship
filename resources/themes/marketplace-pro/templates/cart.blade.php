@@ -127,10 +127,11 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <a href="{{ url('shop') }}" class="continue btn btn-primary pull-xs-right">
+                                
+                                <a style="background-color: #091E08; color:white" href="{{ url('shop') }}" class="continue btn btn-primary pull-xs-right">
                                     @lang('corals-marketplace-pro::labels.template.cart.continue_shopping')
                                 </a>
-                                <span class="col-md-3 col price">
+                                <span class="col-md-3 col price" style="border: solid 1px #091E08; border-radius: 50px; padding-top: 7px;">
                                     <span class="label">@lang('corals-marketplace-pro::labels.template.cart.subtotal')</span>
                                     <span class="product-price total" id="total">
                                         {{ ShoppingCart::subTotalAllInstances() }}
@@ -139,18 +140,20 @@
                                         <small style="font-size: 9px">@lang('Marketplace::attributes.product.tax_included') </small>
                                     @endif
                                 </span>
-                                <a href="{{ url('checkout') }}" class="continue btn btn-primary float-right">
+                                <a style="background-color: #091E08; color:white" href="{{ url('checkout') }}" class="continue btn btn-primary float-right">
                                     @lang('corals-marketplace-pro::labels.template.cart.checkout')
                                 </a>
+                                
                             </div>
                         </div>
 
                     @else
                         <div class="row">
-                            <div class="col-lg-12 text-center">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10 text-center" style="padding: 50px; box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;">
                                 <h3>@lang('corals-marketplace-pro::labels.template.cart.have_no_item')</h3>
 
-                                <a href="{{ url('shop') }}"
+                                <a style="margin-top:30px; background-color: #091E08; color:white" href="{{ url('shop') }}"
                                    class="btn btn-light">@lang('corals-marketplace-pro::labels.template.cart.continue_shopping')</a>
                             </div>
                         </div>

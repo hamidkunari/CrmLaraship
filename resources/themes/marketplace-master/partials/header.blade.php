@@ -56,42 +56,10 @@
     </nav>
 </div>
 <!-- Topbar-->
-<div class="topbar">
-    <div class="topbar-column">
-        <a class="hidden-md-down" href="mailto:{{ \Settings::get('contact_form_email','support@example.com') }}">
-            <i class="fa fa-envelope-o"></i>&nbsp;
-            {{ \Settings::get('contact_form_email','support@example.com') }}
-        </a>
-        <a class="hidden-md-down" href="tel:{{ \Settings::get('contact_mobile','+970599593301') }}"><i
-                    class="fa fa-mobile"></i>
-            &nbsp; {{ \Settings::get('contact_mobile','+970599593301') }}
-        </a>
-        @foreach(\Settings::get('social_links',[]) as $key=>$link)
-            <a class="social-button sb-{{ $key }} shape-none sb-dark" href="{{ $link }}" target="_blank"><i
-                        class="fa fa-{{ $key }}"></i></a>
-        @endforeach
-    </div>
 
-    <div class="topbar-column">
-
-        <ul class="list-unstyled currencies" style="display: inline-block;">
-            @php \Actions::do_action('post_display_frontend_menu') @endphp
-        </ul>
-        @if(count(\Settings::get('supported_languages', [])) > 1)
-            <li class="dropdown locale" style="list-style-type: none;display: inline-block">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    {!! \Language::flag() !!} {!! \Language::getName() !!}
-                </a>
-                {!! \Language::flags('dropdown-menu') !!}
-
-            </li>
-        @endif
-    </div>
-
-</div>
 <!-- Navbar-->
 <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
-<header class="navbar navbar-sticky">
+<header class="navbar navbar-sticky" style="background-color:#091E08">
     <!-- Search-->
     <form class="site-search" method="get" action="{{ url('shop') }}">
         <input type="text" name="search" value="{{ request()->get('search') }}"  class="auto-complete" autocomplete="off"  data-url="{{ url('shop/autocomeplete') }}"  placeholder="Type to search..."/>
@@ -113,7 +81,7 @@
     </div>
     <!-- Main Navigation-->
     <nav class="site-menu">
-        <ul>
+        <ul style="color:white">
             @include('partials.menu.menu_item', ['menus' => Menus::getMenu('frontend_top','active')])
         </ul>
     </nav>
@@ -121,14 +89,14 @@
     <div class="toolbar">
         <div class="inner">
             <div class="tools">
-                <div class="search"><i class="icon-search"></i></div>
+                <div class="search"><i style="color:white" class="icon-search"></i></div>
                 @auth
                 <a class="waves-effect waves-dark"
                    href="{{ url('notifications') }}"
                    aria-expanded="false">
                     <div class="notifications">
 
-                        <i class="icon-bell"></i>
+                        <i style="color:white" class="icon-bell"></i>
                         <div id="notifications_count">
                             @if($unreadNotifications = user()->unreadNotifications()->count())
                                 {{ $unreadNotifications }}
@@ -140,8 +108,8 @@
 
                 @endauth
                 <div class="account">
-                    <a href="#"></a><i class="icon-head"></i>
-                    <ul class="toolbar-dropdown">
+                    <a href="#"></a><i style="color:white" class="icon-head"></i>
+                    <ul class="toolbar-dropdown" style="background-color: #091E08;">
                         @auth
                         <li class="sub-menu-user">
                             <div class="user-ava">
@@ -184,14 +152,14 @@
                             @endauth
                     </ul>
                 </div>
-                <div class="cart" id="cart_list"><a href="{{ url('cart') }}"></a>
+                <div class="cart" id="cart_list" ><a href="{{ url('cart') }}"></a>
                     <i class="fa fa-shopping-cart fa-fw"></i>
                     <span class="count" id="cart-header-count">{{ \ShoppingCart::countAllInstances() }}</span>
                     <span class="subtotal" id="cart-header-total">
                         {{ \ShoppingCart::totalAllInstances() }}
                     </span>
-                    <div class="toolbar-dropdown">
-                        <div class="cart_summary">
+                    <div class="toolbar-dropdown" style="border: solid 1px #091E08;">
+                        <div class="cart_summary" >
                             @include('partials.cart_summary')
                         </div>
                     </div>

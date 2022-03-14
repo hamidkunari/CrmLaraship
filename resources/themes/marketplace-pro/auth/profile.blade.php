@@ -41,26 +41,26 @@
                         <div class="row">
                             <div class="col-md-12">
                                 {!! Form::model($user = user(), ['url' => url('profile'), 'method'=>'PUT','class'=>'ajax-form','files'=>true]) !!}
-                                <ul class="nav nav-pills mt-2">
-                                    <li class="nav-item"><a href="#edit_profile" class="nav-link active"
+                                <ul class="nav nav-pills mt-2" style="background-color: #091E08">
+                                    <li class="nav-item"><a style="color:white" href="#edit_profile" class="nav-link"
                                                             data-toggle="tab"
                                                             aria-expanded="false">
-                                            <i class="fa fa-pencil"></i> @lang('corals-marketplace-pro::labels.auth.edit_profile')
+                                            <i style="color:white" class="fa fa-pencil"></i> @lang('corals-marketplace-pro::labels.auth.edit_profile')
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#profile_addresses" class="nav-link" data-toggle="tab"><i
+                                        <a style="color: white" href="#profile_addresses" class="nav-link" data-toggle="tab"><i style="color:white"
                                                     class="fa fa-map-marker"></i>
                                             @lang('corals-marketplace-pro::labels.auth.addresses')</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#reset_password" class="nav-link" data-toggle="tab"><i
+                                        <a style="color: white" href="#reset_password" class="nav-link" data-toggle="tab"><i style="color:white"
                                                     class="fa fa-lock"></i>
                                             @lang('corals-marketplace-pro::labels.auth.auth_password')</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#notification_preferences" class="nav-link" data-toggle="tab"><i
-                                                    class="fa fa-bell-o"></i>
+                                        <a style="color: white " href="#notification_preferences" class="nav-link" data-toggle="tab"><i
+                                                  style="color:white"  class="fa fa-bell-o"></i>
                                             @lang('corals-marketplace-pro::labels.auth.notification_preferences')
                                         </a>
                                     </li>
@@ -69,7 +69,7 @@
                                     <div class="tab-pane active" id="edit_profile">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                {!! CoralsForm::text('name','User::attributes.user.name',true) !!}
+                                                {!!  CoralsForm::text('name','User::attributes.user.name',true) !!}
                                                 {!! CoralsForm::email('email','User::attributes.user.email',true) !!}
                                                 {!! CoralsForm::textarea('properties[about]', 'User::attributes.user.about' , false, null,[
                                                 'class'=>'limited-text',
@@ -87,7 +87,7 @@
                                                 <div class="text-center">
                                                     <img id="image_source"
                                                          class="profile-user-img img-responsive img-circle"
-                                                         style="width: 200px"
+                                                         style="width: 200px; border-radius: 10px;"
                                                          src="{{ user()->picture }}"
                                                          alt="User profile picture">
                                                     {{ Form::hidden('profile_image') }}
